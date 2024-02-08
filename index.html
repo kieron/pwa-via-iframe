@@ -45,48 +45,19 @@
     </style>
   </head>
   <body>
-    <div
-      style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0"
-      id="me"
-    >
+    <div style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0">
       <iframe
-        id="some_frame_id"
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; border: none; overflow: auto"
       ></iframe>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"
-      integrity="sha512-djmgTiVR15A/7fON+ojDzFYrRsfVkzQZu07ZVb0zLC1OhA2iISP39Lzs05GqSKF0vPjkLzL5hBC+am6po7dKpA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+
     <script>
       var serviceWorkerReg = false;
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
           serviceWorkerReg =
             navigator.serviceWorker.register("service-worker.js");
-        }
-
-        // Check if the app is running in standalone mode
-        const standalone =
-          navigator.standalone ||
-          window.matchMedia("(display-mode: standalone)").matches;
-
-        if (standalone) {
-          alert("Running in standalone mode");
-          // Initialize pull to refresh only if in standalone mode
-          PullToRefresh.init({
-            mainElement: "#some_frame_id", // Use body as the main element to listen for pull events
-            onRefresh() {
-              alert("Refreshed");
-              // Function to refresh the iframe instead of the whole page
-              document
-                .getElementById("some_frame_id")
-                .contentWindow.location.reload();
-            },
-          });
         }
       });
     </script>
