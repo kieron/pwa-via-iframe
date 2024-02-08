@@ -33,6 +33,7 @@
     <meta name="msapplication-TileColor" content="#49b9c1" />
     <meta name="theme-color" content="#49b9c1" />
     <link rel="manifest" href="manifest.json" />
+
     <style>
       body,
       html {
@@ -46,10 +47,17 @@
   <body>
     <div style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0">
       <iframe
+        id="some_frame_id"
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; border: none; overflow: auto"
       ></iframe>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"
+      integrity="sha512-djmgTiVR15A/7fON+ojDzFYrRsfVkzQZu07ZVb0zLC1OhA2iISP39Lzs05GqSKF0vPjkLzL5hBC+am6po7dKpA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
       var serviceWorkerReg = false;
       window.addEventListener("load", function () {
@@ -58,28 +66,18 @@
             navigator.serviceWorker.register("service-worker.js");
         }
       });
-    </script>
-    <script>
-      let startY;
 
-      document.addEventListener("touchstart", (e) => {
-        startY = e.touches[0].pageY;
-      });
+      const standalone =
+        navigator.standalone ||
+        window.matchMedia("(display-mode: standalone)").matches;
+      if (!standalone) {
+        return; // not standalone; no pull to refresh needed
+      }
 
-      document.addEventListener("touchmove", (e) => {
-        const touchY = e.touches[0].pageY;
-        if (touchY > startY + 50) {
-          // Check if pulled down by 50px
-          e.preventDefault(); // Prevent the default pull-to-refresh effect in some browsers
-        }
-      });
-
-      document.addEventListener("touchend", (e) => {
-        const endY = e.changedTouches[0].pageY;
-        if (endY > startY + 50) {
-          // Refresh iframe if pulled down by more than 50px
-          document.getElementById("iframe").contentWindow.location.reload();
-        }
+      PullToRefresh.init({
+        onRefresh() {
+          location.reload();
+        },
       });
     </script>
   </body>
