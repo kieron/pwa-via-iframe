@@ -33,6 +33,8 @@
     <meta name="msapplication-TileColor" content="#49b9c1" />
     <meta name="theme-color" content="#49b9c1" />
     <link rel="manifest" href="manifest.json" />
+    <link type="script" src="https://github.com/BoxFactura/pulltorefresh.js"
+
     <style>
       body,
       html {
@@ -70,6 +72,16 @@
             navigator.serviceWorker.register("service-worker.js");
         }
       });
+
+      PullToRefresh.init({
+        mainElement: '#main', // above which element?
+          onRefresh(done) {
+              setTimeout(() => {
+                    done(); // end pull to refresh
+                          alert('refresh');
+                              }, 1500);
+                                }
+                                });
     </script>
   </body>
 </html>
