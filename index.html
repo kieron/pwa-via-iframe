@@ -59,5 +59,28 @@
         }
       });
     </script>
+    <script>
+      let startY;
+
+      document.addEventListener("touchstart", (e) => {
+        startY = e.touches[0].pageY;
+      });
+
+      document.addEventListener("touchmove", (e) => {
+        const touchY = e.touches[0].pageY;
+        if (touchY > startY + 50) {
+          // Check if pulled down by 50px
+          e.preventDefault(); // Prevent the default pull-to-refresh effect in some browsers
+        }
+      });
+
+      document.addEventListener("touchend", (e) => {
+        const endY = e.changedTouches[0].pageY;
+        if (endY > startY + 50) {
+          // Refresh iframe if pulled down by more than 50px
+          document.getElementById("iframe").contentWindow.location.reload();
+        }
+      });
+    </script>
   </body>
 </html>
