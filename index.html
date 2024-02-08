@@ -47,9 +47,10 @@
   </head>
   <body>
     <div
+    id="fr"
       style="
   
-  
+
 
         position: absolute;
         top: 0px;
@@ -78,10 +79,14 @@
         
       
           
-          /* global PullToRefresh */
-                PullToRefresh.init({
-                        onRefresh: function() { alert('refresh'); },
-                              });
+       /* global PullToRefresh */
+             PullToRefresh.init({
+                     mainElement: '#fr',
+                             onRefresh: function() { alert('refresh') }
+                                   });
+        
+                      
+                        
                      
                        
                                 
