@@ -73,15 +73,18 @@
         }
       });
 
-      PullToRefresh.init({
-        mainElement: '#body', // above which element?
-          onRefresh(done) {
-              setTimeout(() => {
-                    done(); // end pull to refresh
-                          alert('refresh');
-                              }, 1500);
-                                }
-                                });
+     
+        
+      
+          
+          /* global PullToRefresh */
+                PullToRefresh.init({
+                        onRefresh: function() { alert('refresh'); },
+                              });
+                     
+                       
+                                
+
     </script>
   </body>
 </html>
