@@ -78,7 +78,7 @@
           alert("Running in standalone mode");
           // Initialize pull to refresh only if in standalone mode
           PullToRefresh.init({
-            mainElement: "#me", // Use body as the main element to listen for pull events
+            mainElement: "#some_frame_id", // Use body as the main element to listen for pull events
             onRefresh() {
               alert("Refreshed");
               // Function to refresh the iframe instead of the whole page
