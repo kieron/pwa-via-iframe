@@ -49,7 +49,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="body">
     <div
       id="fr"
       style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0"
@@ -71,9 +71,11 @@
 
       /* global PullToRefresh */
       PullToRefresh.init({
-        mainElement: "#fr",
+        mainElement: "#body",
         onRefresh: function () {
-          alert("refresh");
+          document
+            .getElementById("some_frame_id")
+            .contentWindow.location.reload();
         },
       });
     </script>
