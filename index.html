@@ -49,12 +49,8 @@
       }
     </style>
   </head>
-  <body id="body">
-    <div
-      id="fr"
-      style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0"
-    >
-      <br />
+  <body>
+    <div style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0">
       <iframe
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; border: none; overflow: auto"
@@ -70,14 +66,7 @@
       });
 
       /* global PullToRefresh */
-      PullToRefresh.init({
-        mainElement: "#body",
-        onRefresh: function () {
-          document
-            .getElementById("some_frame_id")
-            .contentWindow.location.reload();
-        },
-      });
+      PullToRefresh.init({});
     </script>
   </body>
 </html>
