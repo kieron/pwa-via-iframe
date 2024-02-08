@@ -4,7 +4,7 @@
   "description": "Louth to Mouth Partners",
   "id": "ltm",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "minimal-ui",
   "scope": "/",
   "background_color": "#49b9c1",
   "theme_color": "#49b9c1",
