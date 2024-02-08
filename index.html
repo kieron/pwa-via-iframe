@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-  <!-- https://github.com/TheNocoder/pwa-via-iframe -->
   <head>
     <title>Louth to Mouth</title>
     <meta charset="utf-8" />
@@ -9,7 +8,7 @@
     <meta name="application-name" content="Iframe PWA" />
     <meta name="apple-mobile-web-app-title" content="Iframe PWA" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="manifest" href="/ipwa/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <style>
       body,
       html {
@@ -41,9 +40,8 @@
       var serviceWorkerReg = false;
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          serviceWorkerReg = navigator.serviceWorker.register(
-            "/ipwa/service-worker.js"
-          );
+          serviceWorkerReg =
+            navigator.serviceWorker.register("service-worker.js");
         }
       });
     </script>
