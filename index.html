@@ -72,10 +72,12 @@
           window.matchMedia("(display-mode: standalone)").matches;
 
         if (standalone) {
+          alert("Running in standalone mode");
           // Initialize pull to refresh only if in standalone mode
           PullToRefresh.init({
             mainElement: "body", // Use body as the main element to listen for pull events
             onRefresh() {
+              alert("Refreshed");
               // Function to refresh the iframe instead of the whole page
               document
                 .getElementById("some_frame_id")
