@@ -12,17 +12,20 @@
     {
       "src": "icons/48.png",
       "type": "image/png",
-      "sizes": "48x48"
+      "sizes": "48x48",
+      "purpose": "any"
     },
     {
       "src": "icons/192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
       "src": "icons/512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ]
 }
