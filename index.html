@@ -51,7 +51,9 @@
   </head>
   <body>
     <div style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0">
+      <br />
       <iframe
+        id="some_frame_id"
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; border: none; overflow: auto"
       ></iframe>
@@ -65,8 +67,13 @@
         }
       });
 
-      /* global PullToRefresh */
-      PullToRefresh.init({});
+      PullToRefresh.init({
+        onRefresh: function () {
+          document
+            .getElementById("some_frame_id")
+            .contentWindow.location.reload();
+        },
+      });
     </script>
   </body>
 </html>
