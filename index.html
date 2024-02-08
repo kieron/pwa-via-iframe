@@ -33,39 +33,32 @@
     <meta name="msapplication-TileColor" content="#49b9c1" />
     <meta name="theme-color" content="#49b9c1" />
     <link rel="manifest" href="manifest.json" />
-    
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"
+      integrity="sha512-djmgTiVR15A/7fON+ojDzFYrRsfVkzQZu07ZVb0zLC1OhA2iISP39Lzs05GqSKF0vPjkLzL5hBC+am6po7dKpA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <style>
       body,
       html {
-       margin: 0;
-       padding: 0;
-       height: 100%;
-       overflow: hidden;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
       }
     </style>
   </head>
   <body>
     <div
-    id="fr"
-      style="
-  
-
-
-        position: absolute;
-        top: 0px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      "
+      id="fr"
+      style="position: absolute; top: 0px; left: 0; right: 0; bottom: 0"
     >
-
       <iframe
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; border: none; overflow: auto"
       ></iframe>
     </div>
-    <script src="/refresh.js"></script>
     <script>
       var serviceWorkerReg = false;
       window.addEventListener("load", function () {
@@ -75,22 +68,13 @@
         }
       });
 
-     
-        
-      
-          
-       /* global PullToRefresh */
-        PullToRefresh.init({
-         mainElement: '#fr',
-           onRefresh: function() { alert('refresh') }
-        });
-        
-                      
-                        
-                     
-                       
-                                
-
+      /* global PullToRefresh */
+      PullToRefresh.init({
+        mainElement: "#fr",
+        onRefresh: function () {
+          alert("refresh");
+        },
+      });
     </script>
   </body>
 </html>
