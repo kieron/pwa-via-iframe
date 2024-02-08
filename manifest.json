@@ -1,7 +1,7 @@
 {
-  "short_name": "LTM Admin",
-  "name": "Louth to Mouth Admin",
-  "description": "Louth to Mouth Admin Panel",
+  "short_name": "LTM Partners",
+  "name": "Louth to Mouth Partners",
+  "description": "Louth to Mouth Partners",
   "id": "ltm",
   "start_url": "/",
   "display": "standalone",
