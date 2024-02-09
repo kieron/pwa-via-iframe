@@ -52,10 +52,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: yellow;
+        background: #49b9c1;
       "
     >
-      <br />
       <br />
       <iframe
         id="redbox"
@@ -67,9 +66,8 @@
     <script>
       /* global PullToRefresh */
       PullToRefresh.init({
-        mainElement: "#lel",
+        mainElement: "#redbox",
         onRefresh: function () {
-          alert("refresh");
           document.getElementById("redbox").src =
             document.getElementById("redbox").src;
         },
