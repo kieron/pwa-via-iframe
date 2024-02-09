@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <title>Louth to Mouth Partners</title>
+    <title>Partners - Louth to Mouth</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -47,7 +47,7 @@
   </head>
   <body>
     <div
-      id="redbox-container"
+      id="cont"
       style="
         position: absolute;
         top: 0;
@@ -58,7 +58,7 @@
       "
     >
       <iframe
-        id="redbox"
+        id="frame"
         src="https://manage.redbox.systems/"
         style="width: 100%; height: 100%; overflow: auto; border: none"
       ></iframe>
@@ -84,13 +84,13 @@
         window.matchMedia("(display-mode: standalone)").matches;
 
       if (standalone) {
-        document.getElementById("redbox-container").style.top = "20px";
+        document.getElementById("cont").style.top = "20px";
         /* global PullToRefresh */
         PullToRefresh.init({
-          mainElement: "#redbox",
+          mainElement: "#frame",
           onRefresh: function () {
-            document.getElementById("redbox").src =
-              document.getElementById("redbox").src;
+            document.getElementById("frame").src =
+              document.getElementById("frame").src;
           },
         });
       }
