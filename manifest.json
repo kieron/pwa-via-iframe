@@ -1,7 +1,7 @@
 {
-  "short_name": "LTM Partners",
+  "short_name": "Partners",
   "name": "Louth to Mouth Partners",
-  "description": "Louth to Mouth Partners",
+  "description": "Louth to Mouth Partner App",
   "id": "ltm",
   "start_url": "/",
   "display": "standalone",
