@@ -47,9 +47,10 @@
   </head>
   <body>
     <div
+      id="redbox-container"
       style="
         position: absolute;
-        top: 20px;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
@@ -77,14 +78,22 @@
         }
       });
 
-      /* global PullToRefresh */
-      PullToRefresh.init({
-        mainElement: "#redbox",
-        onRefresh: function () {
-          document.getElementById("redbox").src =
-            document.getElementById("redbox").src;
-        },
-      });
+      // Check if the app is running in standalone mode
+      const standalone =
+        navigator.standalone ||
+        window.matchMedia("(display-mode: standalone)").matches;
+
+      if (standalone) {
+        document.getElementById("redbox-container").style.top = "20px";
+        /* global PullToRefresh */
+        PullToRefresh.init({
+          mainElement: "#redbox",
+          onRefresh: function () {
+            document.getElementById("redbox").src =
+              document.getElementById("redbox").src;
+          },
+        });
+      }
     </script>
   </body>
 </html>
