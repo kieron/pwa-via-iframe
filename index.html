@@ -52,7 +52,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: blue;
+        background: green;
       "
     >
       <br />
@@ -70,7 +70,8 @@
         mainElement: "#redbox",
         onRefresh: function () {
           alert("refresh");
-          document.getElementById("redbox").contentWindow.location.reload();
+          document.getElementById("redbox").src =
+            document.getElementById("redbox").src;
         },
       });
     </script>
