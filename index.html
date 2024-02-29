@@ -34,27 +34,24 @@
     <meta name="theme-color" content="#49b9c1" />
     <link rel="manifest" href="manifest.json" />
 
-   <style>
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: #49b9c1;
-  }
-  #frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 0; /* Ensure the iframe is behind the button */
-  }
-</style>
-
-
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #49b9c1;
+      }
+      #frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
   </head>
   <body>
     <div
@@ -89,25 +86,6 @@
             navigator.serviceWorker.register("service-worker.js");
         }
       });
-
-      // Check if the app is running in standalone mode
-      const standalone =
-        navigator.standalone ||
-        window.matchMedia("(display-mode: standalone)").matches;
-
-      if (standalone) {
-        document.getElementById("cont").style.top = "20px";
-        /* global PullToRefresh */
-        PullToRefresh.init({
-          mainElement: "#frame",
-          onRefresh: function () {
-            document.getElementById("frame").src =
-              document.getElementById("frame").src;
-          },
-        });
-
-
-      }
     </script>
   </body>
 </html>
