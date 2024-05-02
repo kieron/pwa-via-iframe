@@ -4,7 +4,6 @@
   "description": "Louth to Mouth Partner App",
   "id": "ltm",
   "start_url": "/",
-  "display": "browser",
   "scope": "/",
   "background_color": "#49b9c1",
   "theme_color": "#49b9c1",
