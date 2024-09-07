@@ -84,6 +84,13 @@
     <script>
       var iframe = document.getElementById("frame");
       iframe.src = "https://manage.redbox.systems/?t=" + new Date().getTime();
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          iframe.src =
+            "https://manage.redbox.systems/?t=" + new Date().getTime();
+        }
+      });
     </script>
   </body>
 </html>
