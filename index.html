@@ -75,24 +75,15 @@
       ></iframe>
     </div>
 
-    <script
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"
       integrity="sha512-djmgTiVR15A/7fON+ojDzFYrRsfVkzQZu07ZVb0zLC1OhA2iISP39Lzs05GqSKF0vPjkLzL5hBC+am6po7dKpA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    ></script>
+    ></script> -->
     <script>
-      var serviceWorkerReg = false;
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          serviceWorkerReg =
-            navigator.serviceWorker.register("service-worker.js");
-        }
-
-        // Reload iframe when PWA is opened
-        var iframe = document.getElementById("frame");
-        iframe.src = "https://manage.redbox.systems/?t=" + new Date().getTime();
-      });
+      var iframe = document.getElementById("frame");
+      iframe.src = "https://manage.redbox.systems/?t=" + new Date().getTime();
     </script>
   </body>
 </html>
